@@ -1,0 +1,28 @@
+{
+  "name": "novabyte-technologies",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NovaByte Technologies — premium software development company website with a full REST API.",
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web,domain -c blue,magenta,green \"npm:dev:server\" \"npm:dev:client\" \"npm:dev:domain\"",
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "npm run dev --workspace server",
+    "dev:domain": "node server/scripts/domain-proxy.mjs",
+    "build": "npm run build --workspace client",
+    "start": "npm run start --workspace server",
+    "preview": "npm run preview --workspace client",
+    "seed": "npm run seed --workspace server",
+    "test:api": "npm run test:api --workspace server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
