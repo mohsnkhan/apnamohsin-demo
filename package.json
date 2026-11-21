@@ -1,28 +1,20 @@
 {
-  "name": "novabyte-technologies",
-  "version": "1.0.0",
+  "name": "mohsin-mountain",
   "private": true,
-  "description": "NovaByte Technologies — premium software development company website with a full REST API.",
+  "version": "1.0.0",
   "type": "module",
-  "workspaces": [
-    "client",
-    "server"
-  ],
+  "description": "Mohsin Mountain — mountain travel agency with a fleet of 50 red buses.",
   "scripts": {
-    "dev": "concurrently -n api,web,domain -c blue,magenta,green \"npm:dev:server\" \"npm:dev:client\" \"npm:dev:domain\"",
-    "dev:client": "npm run dev --workspace client",
-    "dev:server": "npm run dev --workspace server",
-    "dev:domain": "node server/scripts/domain-proxy.mjs",
-    "build": "npm run build --workspace client",
-    "start": "npm run start --workspace server",
-    "preview": "npm run preview --workspace client",
-    "seed": "npm run seed --workspace server",
-    "test:api": "npm run test:api --workspace server"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "concurrently": "^10.0.7"
-  },
-  "engines": {
-    "node": ">=22.12.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
   }
 }
